@@ -7,9 +7,8 @@ export class SupabaseService {
   private supabase: SupabaseClient;
 
   constructor() {
-    const supabaseUrl: string = 'https://pqboaumpjfdgaswussat.supabase.co';
-    const supabaseKey: string =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxYm9hdW1wamZkZ2Fzd3Vzc2F0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODAwMjIwNjcsImV4cCI6MTk5NTU5ODA2N30.3krnH-cZg2X8nv-LW_3DidQ4KvQNSz5fJmD48A8qNvs';
+    const supabaseUrl: string = process.env.SUPABASE_URL;
+    const supabaseKey: string = process.env.SUPABASE_KEY;
     this.supabase = createClient(supabaseUrl, supabaseKey);
   }
 
